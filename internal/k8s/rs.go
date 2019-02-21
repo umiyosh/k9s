@@ -40,5 +40,6 @@ func (r *ReplicaSet) List(ns string) (Collection, error) {
 
 // Delete a ReplicaSet.
 func (r *ReplicaSet) Delete(ns, n string, cascade, force bool) error {
-	return r.DialOrDie().Apps().ReplicaSets(ns).Delete(n, nil)
+	// return r.DialOrDie().Apps().ReplicaSets(ns).Delete(n, nil)
+	return nil
 }

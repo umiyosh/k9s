@@ -40,5 +40,6 @@ func (d *Deployment) List(ns string) (Collection, error) {
 
 // Delete a Deployment.
 func (d *Deployment) Delete(ns, n string, cascade, force bool) error {
-	return d.DialOrDie().Apps().Deployments(ns).Delete(n, nil)
+	// return d.DialOrDie().Apps().Deployments(ns).Delete(n, nil)
+	return nil
 }

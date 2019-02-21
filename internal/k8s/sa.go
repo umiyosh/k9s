@@ -40,5 +40,6 @@ func (s *ServiceAccount) List(ns string) (Collection, error) {
 
 // Delete a ServiceAccount.
 func (s *ServiceAccount) Delete(ns, n string, cascade, force bool) error {
-	return s.DialOrDie().CoreV1().ServiceAccounts(ns).Delete(n, nil)
+	// return s.DialOrDie().CoreV1().ServiceAccounts(ns).Delete(n, nil)
+	return nil
 }

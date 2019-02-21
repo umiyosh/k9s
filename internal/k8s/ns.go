@@ -39,5 +39,6 @@ func (n *Namespace) List(_ string) (Collection, error) {
 
 // Delete a namespace.
 func (n *Namespace) Delete(_, name string, cascade, force bool) error {
-	return n.DialOrDie().CoreV1().Namespaces().Delete(name, nil)
+	// return n.DialOrDie().CoreV1().Namespaces().Delete(name, nil)
+	return nil
 }

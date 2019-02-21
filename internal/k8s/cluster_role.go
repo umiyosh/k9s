@@ -40,5 +40,6 @@ func (c *ClusterRole) List(_ string) (Collection, error) {
 
 // Delete a ClusterRole.
 func (c *ClusterRole) Delete(_, n string, cascade, force bool) error {
-	return c.DialOrDie().RbacV1().ClusterRoles().Delete(n, nil)
+	// return c.DialOrDie().RbacV1().ClusterRoles().Delete(n, nil)
+	return nil
 }

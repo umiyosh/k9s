@@ -218,22 +218,21 @@ func (v *resourceView) backCmd(*tcell.EventKey) *tcell.EventKey {
 }
 
 func (v *resourceView) deleteCmd(evt *tcell.EventKey) *tcell.EventKey {
-	if !v.rowSelected() {
-		return evt
-	}
+	// if !v.rowSelected() {
+		// return evt
+	// }
 
-	sel := v.getSelectedItem()
-	v.showDelete(fmt.Sprintf("Delete %s %s?", v.list.GetName(), sel), func(cascade, force bool) {
-		v.getTV().setDeleted()
-		v.app.flash().infof("Deleting %s %s", v.list.GetName(), sel)
-		if err := v.list.Resource().Delete(sel, cascade, force); err != nil {
-			v.app.flash().errf("Delete failed with %s", err)
-		} else {
-			v.refresh()
-		}
-		v.dismissModal()
-	})
-
+	// sel := v.getSelectedItem()
+	// v.showDelete(fmt.Sprintf("Delete %s %s?", v.list.GetName(), sel), func(cascade, force bool) {
+		// v.getTV().setDeleted()
+		// v.app.flash().infof("Deleting %s %s", v.list.GetName(), sel)
+		// if err := v.list.Resource().Delete(sel, cascade, force); err != nil {
+			// v.app.flash().errf("Delete failed with %s", err)
+		// } else {
+			// v.refresh()
+		// }
+		// v.dismissModal()
+	// })
 	return nil
 }
 
@@ -476,7 +475,11 @@ func (v *resourceView) refreshActions() {
 		v.actions[KeyE] = newKeyAction("Edit", v.editCmd, true)
 	}
 	if v.list.Access(resource.DeleteAccess) {
+<<<<<<< HEAD
 		v.actions[tcell.KeyCtrlD] = newKeyAction("Delete", v.deleteCmd, true)
+=======
+		// aa[tcell.KeyCtrlD] = newKeyAction("Delete", v.deleteCmd, true)
+>>>>>>> removed delete oparation
 	}
 	if v.list.Access(resource.ViewAccess) {
 		v.actions[KeyY] = newKeyAction("YAML", v.viewCmd, true)

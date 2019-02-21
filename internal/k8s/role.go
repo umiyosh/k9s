@@ -41,5 +41,6 @@ func (r *Role) List(ns string) (Collection, error) {
 
 // Delete a Role.
 func (r *Role) Delete(ns, n string, cascade, force bool) error {
-	return r.DialOrDie().RbacV1().Roles(ns).Delete(n, nil)
+	// return r.DialOrDie().RbacV1().Roles(ns).Delete(n, nil)
+	return nil
 }

@@ -40,5 +40,6 @@ func (s *Service) List(ns string) (Collection, error) {
 
 // Delete a Service.
 func (s *Service) Delete(ns, n string, cascade, force bool) error {
-	return s.DialOrDie().CoreV1().Services(ns).Delete(n, nil)
+	// return s.DialOrDie().CoreV1().Services(ns).Delete(n, nil)
+	return nil
 }
