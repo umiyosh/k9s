@@ -40,6 +40,6 @@ func (n *Node) List(_ string) (Collection, error) {
 
 // Delete a node.
 func (n *Node) Delete(_, name string, cascade, force bool) error {
-	return n.DialOrDie().CoreV1().Nodes().Delete(name, nil)
+	// return n.DialOrDie().CoreV1().Nodes().Delete(name, nil)
 	return nil
 }

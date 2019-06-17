@@ -39,18 +39,13 @@ func (r *ReplicationController) List(ns string) (Collection, error) {
 }
 
 // Delete a RC.
-<<<<<<< HEAD
 func (r *ReplicationController) Delete(ns, n string, cascade, force bool) error {
-	p := metav1.DeletePropagationOrphan
-	if cascade {
-		p = metav1.DeletePropagationBackground
-	}
-	return r.DialOrDie().Core().ReplicationControllers(ns).Delete(n, &metav1.DeleteOptions{
-		PropagationPolicy: &p,
-	})
-=======
-func (r *ReplicationController) Delete(ns, n string) error {
-	// return r.DialOrDie().Core().ReplicationControllers(ns).Delete(n, nil)
+	// p := metav1.DeletePropagationOrphan
+	// if cascade {
+	// p = metav1.DeletePropagationBackground
+	// }
+	// return r.DialOrDie().Core().ReplicationControllers(ns).Delete(n, &metav1.DeleteOptions{
+	// PropagationPolicy: &p,
+	// })
 	return nil
->>>>>>> removed delete oparation
 }
